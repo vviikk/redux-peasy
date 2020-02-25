@@ -6,5 +6,26 @@
   "repository": "git@github.com:vviikk/redux-peasy.git",
   "author": "Vik Ramanujam <vik@ramanuj.am>",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-optional-chaining": "^7.8.3",
+    "@babel/plugin-proposal-throw-expressions": "^7.8.3",
+    "babel-plugin-module-resolver": "^4.0.0"
+  },
+  "aliases": {
+    "~assets": "./src/assets",
+    "~lang": "./src/i18n",
+    "~icons": "./src/assets/icons",
+    "~config": "./src/config",
+    "~views": "./src/views",
+    "~utils": "./src/utils"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.8.4",
+    "jest": "^25.1.0"
+  },
+  "scripts": {
+    "test": "jest"
+  }
 }
