@@ -1,6 +1,6 @@
 {
   "name": "redux-peasy",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Painfree ZERO boilerplate redux for next generation React using hooks",
   "main": "src/index.js",
   "repository": "git@github.com:vviikk/redux-peasy.git",
