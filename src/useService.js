@@ -4,17 +4,12 @@ import { useDispatch } from 'react-redux';
 
 export default (service) => {
     const dispatch = useDispatch();
-    
     if (service.action) {
         return [
-            // action
             useMemo(() => bindActionCreators(service.action, dispatch), [service.action, dispatch]),
-            // clear action
-            useMemo(() => bindActionCreators(service.cleanAction, dispatch), [service.cleanAction, dispatch]),
+            service.cleanAction && useMemo(() => bindActionCreators(service.cleanAction, dispatch), [service.cleanAction, dispatch]),
         ];
-    } else if (typeof service === 'function') {
-        return [ useMemo(() => bindActionCreators(service, dispatch), [service, dispatch]) ];
-    };
+    }
 
     if (service instanceof Object) {
         return Object.entries(service).reduce((acc, [key, aService]) => ({

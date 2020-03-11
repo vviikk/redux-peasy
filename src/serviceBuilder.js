@@ -123,8 +123,12 @@ export default (serviceName, fn) => {
 
     return {
         action: getNewAction(fn, 'SUCCESS'),
-        getNewActionSync,
-        getNewAction,
+        getNewActionSync: (args) => ({
+            action: getNewActionSync(...args),
+        }),
+        getNewAction: (...args) => ({
+            action: getNewAction(...args),
+        }),
         actionTypes,
         reducer,
         cleanAction: getNewAction(() => ({ data: null, error: null }), 'CLEAN'),
